@@ -1,0 +1,36 @@
+.hero
+	color: var(--cadet-gray)
+	text-align: center
+	padding-block-start: calc(var(--section-padding) + 80px)
+	padding-block-end: 0
+	overflow: hidden
+	&::after
+		bottom: 0
+		left: 0
+		width: 100%
+		height: 240px
+		background-color: var(--coquelicot)
+		z-index: -1
+	&-content
+		margin-block-end: 90px
+	&-subtitle
+		background-color: var(--white_10)
+		color: var(--white)
+		margin-inline: auto
+		padding: 5px
+		padding-inline-end: 15px
+		border-radius: var(--radius-8)
+		.strong
+			display: inline-block
+			background-color: var(--coquelicot)
+			padding: 2px 15px
+			margin-inline-end: 15px
+			border-radius: var(--radius-5)
+	&-title
+		margin-block: 30px 8px
+	.section-text
+		margin-block-end: 40px
+	.btn
+		margin-inline: auto
+	&-banner
+		position: relative

@@ -1,0 +1,113 @@
+.footer
+	font-size: var(--fs-6)
+	&-top
+		.container
+			display: grid
+			gap: 50px
+		.wrapper
+			display: flex
+			justify-content: flex-start
+			align-items: flex-start
+			gap: 20px
+	.logo
+		color: var(--white)
+	&-brand
+		&-text
+			margin-block: 25px
+		&-list
+			li:not(:last-child)
+				margin-block-end: 15px
+		&-title
+			color: var(--white)
+	&-list
+		&-title
+			color: var(--white)
+			font-size: var(--fs-4)
+			font-weight: 800
+			margin-block-end: 28px
+			&::before
+				bottom: 0
+				width: 70px
+				height: 1px
+				background-color: var(--coquelicot)
+		& > li:not(:first-child)
+			margin-block-start: 12px
+		&-item
+			display: flex
+			justify-content: flex-start
+			align-items: center
+			gap: 20px
+			.icon
+				background-color: var(--coquelicot)
+				color: var(--white)
+				font-size: 24px
+				padding: 8px
+				border-radius: 50px
+	&-link
+		transition: var(--transition-1)
+		&:not(.address):is(:hover, :focus)
+			color: var(--coquelicot)
+	&-form
+		position: relative
+		margin-block-end: 30px
+		.input-field
+			background-color: var(--white)
+			color: var(--rich-black-fogra-29-1)
+			padding-block: 18px
+			padding-inline: 30px 50px
+			border-radius: var(--radius-10)
+		.btn
+			position: absolute
+			top: 5px
+			right: 5px
+			bottom: 5px
+			padding: 0
+			font-size: 26px
+			padding-inline: 12px
+			&-primary:is(:hover, :focus)
+				background-color: var(--rich-black-fogra-29-1)
+				color: var(--white)
+				box-shadow: none
+	&-bottom
+		background-color: var(--rich-black-fogra-29-1)
+		color: var(--white)
+		text-align: center
+		padding-block: 15px
+		&-list
+			display: flex
+			justify-content: center
+			gap: 15px
+			margin-block-start: 10px
+		&-link 
+			padding-inline-start: 18px
+			transition: var(--transition-1)
+			&::before
+				top: 50%
+				transform: translateY(-50%)
+				left: 0
+				width: 10px
+				height: 10px
+				background-color: var(--coquelicot)
+				border-radius: 50%
+			&:is(:hover, :focus)
+				color: var(--coquelicot)
+
+.copyright
+	&-link
+		display: inline-block
+		color: var(--coquelicot)
+
+
+.social
+	&-list
+		display: flex
+		gap: 15px
+	&-link
+		background-color: var(--white_20)
+		color: var(--white)
+		padding: 13px
+		border-radius: 50%
+		transition: var(--transition-1)
+		&:is(:hover, :focus)
+			background-color: var(--coquelicot)
+

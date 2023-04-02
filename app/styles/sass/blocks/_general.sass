@@ -1,3 +1,183 @@
 // GENERAL PROJECT STYLES
 
+.container
+	padding-inline: $gutter
 
+.section
+	padding-block: var(--section-padding)
+	&-title
+		margin-block: 18px 35px
+	&-text
+		font-size: var(--fs-6)
+	&-subtitle
+		background-color: var(--coquelicot_10)
+		color: var(--coquelicot)
+		padding: 8px 20px
+		border-radius: var(--radius-8)
+
+.hero-subtitle, .section-subtitle
+	text-transform: uppercase
+	font-weight: 700
+	max-width: max-content
+
+
+.bg-dark
+	background-color: var(--rich-black-fogra-29-1)
+	color: var(--silver-metallic)
+
+.has-bg-image
+	background-repeat: no-repeat
+	background-position: top left
+
+.has-scrollbar
+	display: flex
+	gap: 25px
+	overflow-x: auto
+	padding-block-end: 30px
+	scroll-snap-type: inline mandatory
+	&::-webkit-scrollbar
+		height: 10px
+		&-track, &-thumb
+			border-radius: 50px
+		&-thumb:hover
+			background-color: var(--coquelicot)
+		&-button
+			width: calc( 25% - 25px )
+	
+
+.has-after,
+.has-before
+	position: relative
+	z-index: 1
+
+.has-after::after,
+.has-before::before
+	content: ''
+	position: absolute
+
+.h1,
+.h2,
+.h3
+	line-height: 1.25
+	text-transform: capitalize
+
+.h1
+	color: var(--white)
+	font-size: var(--fs-1)
+	font-weight: 900
+
+.h2,
+.h3
+	color: var(--rich-black-fogra-29-1)
+	font-weight: 800
+
+.h2
+	font-size: var(--fs-2)
+
+.h3
+	font-size: var(--fs-4)
+
+.btn
+	max-width: max-content
+	font-size: var(--fs-6)
+	text-transform: uppercase
+	font-weight: 700
+	padding: 15px 35px
+	border-radius: var(--radius-8)
+	transition: var(--transition-1)
+	&-primary
+		background-color: var(--coquelicot)
+		color: var(--white)
+		&:is(:hover, :focus)
+			background-color: var(--white)
+			color: var(--coquelicot)
+			box-shadow: var(--shadow-2)
+	&-secondary
+		background-color: var(--white)
+		color: var(--coquelicot)
+		&:is(:hover, :focus)
+			background-color: var(--rich-black-fogra-29-1)
+	&-link
+		--color: var(--white)
+
+		color: var(--color)
+		text-transform: uppercase
+		font-weight: 500
+		max-width: max-content
+		font-size: var(--fs-6)
+		transition: var(--transition-1)
+		&::before
+			bottom: 0
+			left: 0
+			width: 100%
+			height: 2px
+			background-color: var(--color)
+			transition: var(--transition-1)
+		&:is(:hover, :focus)
+			--color: var(--coquelicot)
+
+.w-100
+	width: 100%
+
+.circle,
+.abs-img
+	position: absolute
+
+.circle
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -56%)
+	width: 100%
+	z-index: -1
+	animation: rotate360 15s linear infinite
+	&-2
+		animation-direction: reverse
+
+
+@keyframes rotate360
+	0%
+		transform: translate(-50%, -56%) rotate(0)
+	100%
+		transform: translate(-50%, -56%) rotate(1turn)
+
+.abs-img-1
+	top: 20px
+	right: -50px
+	width: 190px
+
+.abs-img-2
+	bottom: -50px
+	left: -40px
+	width: 280px
+
+.hero
+	.abs-img
+		animation: move 3s linear infinite alternate
+		&-2
+			animation-direction: alternate-reverse
+
+
+@keyframes move
+	0%
+		transform: translate(0, 0)
+	50%
+		transform: translate(-5px, 10px)
+	100%
+		transform: translate(5px, 20px)
+
+.text-center
+	text-align: center
+
+.img-holder
+	aspect-ratio: var(--width) / var(--height)
+	background-color: var(--light-gray)
+	overflow: hidden
+
+.img-cover
+	width: 100%
+	height: 100%
+	object-fit: cover
+
+.scrollbar-item
+	min-width: 100%
+	scroll-snap-align: start

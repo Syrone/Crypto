@@ -1,22 +1,15 @@
 // USER VARIABLES SECTION
 
 $accent: orange // Accent Color
-$fontsize: 16px // Body Font Size
 $textcolor: #333 // Text Color
-$lineheight: 1.65 // Document Line Height
-$userfont: roboto-oh5, sans-serif // User Font Family
+$fontsize: 10px // Body Font Size
+$lineheight: 1.6 // Document Line Height
+$userfont: Catamaran, sans-serif // User Font Family
 $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
 
 // Bootstrap compatible gutter variable => $gutter
-$grid-gutter-width: 30px
+$grid-gutter-width: 15px
 $gutter: $grid-gutter-width
-
-// IMPORT SECTION
-
-@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
-@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
-// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
-// @import 'node_modules/bootstrap/scss/_utilities.scss' // Optional Bootstrap Utilites
 
 // FONTS LOAD SECTION
 
@@ -27,10 +20,10 @@ $gutter: $grid-gutter-width
 		font-weight: $fweight
 		src: url($furl) format('woff2')
 
-@include font('roboto-oh5', normal, 400, '../fonts/roboto-regular-webfont.woff2')
-@include font('roboto-oh5', italic, 400, '../fonts/roboto-italic-webfont.woff2')
-@include font('roboto-oh5', normal, 700, '../fonts/roboto-bold-webfont.woff2')
-@include font('roboto-oh5', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2')
+@include font('Catamaran', normal, 600, '../fonts/Catamaran-SemiBold.woff2')
+@include font('Catamaran', normal, 700, '../fonts/Catamaran-Bold.woff2')
+@include font('Catamaran', normal, 800, '../fonts/Catamaran-ExtraBold.woff2')
+@include font('Catamaran', normal, 900, '../fonts/Catamaran-Black.woff2')
 
 // GENERAL CSS SETTINGS
 
@@ -41,6 +34,63 @@ $gutter: $grid-gutter-width
 	background-color: $accent
 	color: #fff
 
+:root
+
+	/**
+		* colors
+		*/
+	--rich-black-fogra-29_50: hsl(210, 26%, 11%, 0.5)
+	--rich-black-fogra-29-1: hsl(210, 26%, 11%)
+	--rich-black-fogra-29-2: hsl(210, 50%, 4%)
+	--silver-metallic: hsl(212, 9%, 67%)
+	--coquelicot_20: hsla(12, 98%, 52%, 0.2)
+	--coquelicot_10: hsla(12, 98%, 52%, 0.1)
+	--sonic-silver: hsl(0, 0%, 47%)
+	--cadet-gray: hsl(214, 15%, 62%)
+	--light-gray: hsl(0, 0%, 80%)
+	--coquelicot: hsl(12, 98%, 52%)
+	--gainsboro: hsl(0, 0%, 88%)
+	--white_20: hsl(0, 0%, 100%, 0.2)
+	--white_10: hsl(0, 0%, 100%, 0.1)
+	--black_10: hsl(0, 0%, 0%, 0.1)
+	--white: hsl(0, 0%, 100%)
+
+	/**
+		* font-size
+		*/
+	--fs-1: 3.8rem
+	--fs-2: 3rem
+	--fs-3: 2.5rem
+	--fs-4: 2rem
+	--fs-5: 1.8rem
+	--fs-6: 1.5rem
+
+	/**
+		* spacing
+		*/
+	--section-padding: 80px
+
+	/**
+		* shadow
+		*/
+	--shadow-1: 0 0 20px var(--black_10)
+	--shadow-2: 0px 10px 24px var(--coquelicot_20)
+
+	/**
+		* border-radius
+		*/
+	--radius-10: 10px
+	--radius-8: 8px
+	--radius-5: 5px
+
+	/**
+		* transition
+		*/
+	--transition-1: 0.25s ease
+	--transition-2: 0.5s ease
+	--cubic-in: cubic-bezier(0.51, 0.03, 0.64, 0.28)
+	--cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96)
+
 input, textarea
 	outline: none
 	&:focus:required:invalid
@@ -48,11 +98,72 @@ input, textarea
 	&:required:valid
 		border-color: green
 
-body
+// RESET
+
+*,
+*::before,
+*::after
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+
+li
+	list-style: none
+
+a
+	text-decoration: none
+	color: inherit
+
+a,
+img,
+span,
+input,
+button,
+strong,
+ion-icon
+	display: block
+
+img
+	height: auto
+
+input,
+button
+	background: none
+	border: none
+	font: inherit
+
+input
+	width: 100%
+
+button
+	cursor: pointer
+
+ion-icon
+	pointer-events: none
+
+address
+	font-style: normal
+
+html
 	font-family: $userfont
 	font-size: $fontsize
+	scroll-behavior: smooth
+
+body
+	background-color: var(--white)
+	color: var(--sonic-silver)
+	font-size: 1.6rem
 	line-height: $lineheight
-	color: $textcolor
-	min-width: 320px
-	position: relative
-	overflow-x: hidden
+
+:focus-visible
+	outline-offset: 4px
+
+::-webkit-scrollbar
+	width: 5px
+	&-track
+		background-color: var(--light-gray)
+	&-thumb
+		background-color: var(--coquelicot)
+		&:hover
+			background-color: var(--rich-black-fogra-29-1)
+

@@ -1,0 +1,52 @@
+.class
+	padding-block-start: calc(var(--section-padding) + 250px)
+	.section-subtitle
+		margin-inline: auto
+	.section-title
+		color: var(--white)
+	&-card
+		background-color: var(--white)
+		border-radius: var(--radius-10)
+		height: 100%
+		overflow: hidden
+		.card-title
+			transition: var(--transition-1)
+		.card-banner
+			img
+				transition: var(--transition-2)
+		&:is(:hover, :focus-within)
+			.card-title
+				color: var(--coquelicot)
+			.card-banner img
+				transform: scale(1.1)
+		.card-content
+			padding: 24px
+		.card-text
+			color: var(--sonic-silver)
+			font-size: var(--fs-6)
+			margin-block: 16px 12px
+		.title-wrapper
+			display: flex
+			align-items: center
+		.title-icon
+			padding-inline-end: 20px
+			margin-inline-end: 20px
+			min-width: max-content
+			border-inline-end: 1px solid var(--gainsboro)
+		.progress
+			&-wrapper
+				display: flex
+				justify-content: space-between
+				align-items: center
+				font-size: var(--fs-6)
+				color: var(--rich-black-fogra-29-1)
+				font-weight: 800
+				margin-block-end: 8px
+			&-bg
+				background-color: var(--coquelicot_10)
+				border-radius: 50px
+			&-bar
+				background-color: var(--coquelicot)
+				height: 10px
+				border-radius: inherit
+
